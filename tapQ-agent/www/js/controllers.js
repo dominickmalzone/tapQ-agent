@@ -58,12 +58,16 @@ angular.module('starter.controllers', ['firebase'])
 
 //all is the starter code, take a peak before i delete
 
-  .controller('SessionCtrl', function($scope, $rootScope, $firebase, $stateParams, $ionicLoading){
+  .controller('SessionCtrl', function($scope, $rootScope,$http, $firebase, $stateParams, $ionicLoading){
 
    var firebaseRef = new Firebase("https://qtap.firebaseio.com/user");
     firebaseRef.once('value', function(dataSnapshot){
-    
-    $scope.total = dataSnapshot.val();  
+
+      $scope.returnCall = function(number){
+        $http.get("http://localhost:3000/returnCall/" + number);
+      };
+
+    $scope.total = dataSnapshot.val();
 
     $rootScope.bill = dataSnapshot.val().bill;
     console.log($scope.bill);
@@ -78,6 +82,6 @@ angular.module('starter.controllers', ['firebase'])
     console.log($scope.first);
 
   });
-})
+});
 
 
