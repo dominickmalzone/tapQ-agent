@@ -1,1 +1,36 @@
 /* Empty. Add your own CSS if you like */
+
+.custom{
+	background-color: #00ac66 !important;
+	    border-color: none;
+}
+
+.city{
+	height: 200px;
+	width: 100%;
+}
+.pusherdown{
+padding-top: 90px;	
+}
+.demo{
+	color: white;
+}
+
+.gray{
+
+	background-color: #f8f8f8;
+}
+
+
+.size{
+	width: 70%;
+	height: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 60px;
+}
+
+.smallerbutt{
+	width: 70%;
+	height: 70%;
+}

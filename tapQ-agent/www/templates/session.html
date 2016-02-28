@@ -1,9 +1,24 @@
 <ion-view view-title="Session">
-  <ion-content>
-    <h1>Session</h1>
-    <p>Name: first last }}</p>
-    <p>Billing Address: </p>
-    <p>Email: {{email}}</p>
-    <p>Issue: "Lost Card > Cancel Card > Cancel and Request New</p>
-  </ion-content>
+  <ion-content class="gray">
+
+  	<div class="city" style="background: url(img/chaseHQ.jpg); background-size: cover;">
+  		<div class="pusherdown"></div>
+  		<h1 class="demo">Sarah Banker</h1>
+  		<h4 class="demo">Credit Card Customer Service Specialist</h4>
+  	</div>
+
+		<div class="card center size" >
+		  <div class="item item-divider">
+		    Session #2335
+		  </div>
+		  <div class="item item-text-wrap">
+		    Name: <span ng-bind="first"> </span> {{last}} </br>
+		    Billing Address:  {{bill}} </br>
+		    Email:  {{email}} </br>
+		  </div>
+		</div>
+
+		<button class="button button-block custom">
+		  Action button
+		</button>
 </ion-view>

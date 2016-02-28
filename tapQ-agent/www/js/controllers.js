@@ -58,19 +58,26 @@ angular.module('starter.controllers', ['firebase'])
 
 //all is the starter code, take a peak before i delete
 
-.controller('SessionCtrl', function($scope, $stateParams) {
+  .controller('SessionCtrl', function($scope, $rootScope, $firebase, $stateParams, $ionicLoading){
 
-  var firebaseRef = new Firebase("https://qtap.firebaseio.com/user");
-  console.log(firebaseRef);
+   var firebaseRef = new Firebase("https://qtap.firebaseio.com/user");
+    firebaseRef.once('value', function(dataSnapshot){
+    
+    $scope.total = dataSnapshot.val();  
 
-  firebaseRef.child('firstname').once('value', function(dataSnapshot) {
+    $rootScope.bill = dataSnapshot.val().bill;
+    console.log($scope.bill);
 
-    $scope.email = dataSnapshot.B.C;
-      console.log($scope.email);
-        $scope.test = dataSnapshot.B.D;
-        //scope is printing name, NOT email.
+    $scope.email = dataSnapshot.val().email;
+    console.log($scope.email);
 
-   });
+    $scope.last = dataSnapshot.val().lastname;
+    console.log($scope.last);
 
-});
+    $scope.first = dataSnapshot.val().firstname;
+    console.log($scope.first);
+
+  });
+})
+
 
