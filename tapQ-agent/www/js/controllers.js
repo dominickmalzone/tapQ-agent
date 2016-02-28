@@ -64,7 +64,7 @@ angular.module('starter.controllers', ['firebase'])
     firebaseRef.once('value', function(dataSnapshot){
 
       $scope.returnCall = function(number){
-        $http.get("http://localhost:3000/returnCall/" + number);
+        $http.get("http://qtap-api.azurewebsites.net/returnCall/" + number);
       };
 
     $scope.total = dataSnapshot.val();
